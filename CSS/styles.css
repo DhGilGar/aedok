@@ -314,7 +314,9 @@ main {
   z-index: 10;
   transition: transform 0.5s ease, opacity 0.5s ease;
   background-color: #000000;
-  width:auto ;
+  width:100%;
+  overflow: hidden;
+
 }
 
 /* Estado cerrado: pliega y desaparece */
@@ -1218,10 +1220,18 @@ footer {
   }
 
 
-
+#open-video {
+  top: 15%;
+  width: 70px;
+  height: 70px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
 #section-Video {
-  display: none;
+  width:100%;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 }
 
