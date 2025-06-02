@@ -1225,18 +1225,10 @@ footer {
   }
 
 
-#open-video {
-  top: 15%;
-  width: 70px;
-  height: 70px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-}
+
 
 #section-Video {
-  width:100%;
-  padding-right: 30px;
-  padding-left: 30px;
+  display: none;
 }
 }
 
