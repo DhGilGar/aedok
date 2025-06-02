@@ -63,7 +63,6 @@
   }
 
   html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -71,7 +70,6 @@
   body {
     background-color: #1b5dad;
     font-family: "SF Pro Display", sans-serif;
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -83,15 +81,27 @@
   display: flex;
   flex-direction: column;
 }
-.video-background video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* para que el video rellene el contenedor manteniendo proporciones */
-}
+
 
 main {
   flex: 1;
+}
+
+.video-background {
+  width: 100vw;      /* ancho total de la ventana */
+  height: 100vh;     /* alto total de la ventana */
+  overflow: hidden;  /* oculta lo que sobresalga a los lados */
+  position: relative; /* para posicionar el video */
+}
+
+.video-background video {
+  height: 100vh;     /* siempre igual al alto de la ventana */
+  width: auto;       /* ancho proporcional */
+  position: absolute; 
+  top: 0;
+  left: 50%;         /* posiciona el centro del video al 50% del contenedor */
+  transform: translateX(-50%); /* centra horizontalmente el video */
+  object-fit: cover; /* para cubrir el área sin deformar */
 }
   a {
     text-decoration: none;
@@ -698,78 +708,7 @@ main {
 
 
 
-@media (min-width: 992px) {
-.logo-footer {
-    height: 40px !important;
-  width: auto !important;
-}
-  .section3,
-  .section4,
-  .section5 {
-    display: none;
-  }
 
-  .section2 {
-    position: absolute;
-    right: 10rem; /* Ajusta el margen derecho según necesidad */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .section6 {
-    position: absolute;
-    right: 2rem; /* Ajusta para separarlo del teléfono */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .phone-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* espacio entre icono y texto */
-  }
-
-  .phone-nav .phone-number {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .phone-nav .phone-number:hover {
-    color: #30D5C8;
-  }
-
-/* Estilos del footer */
-footer {
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #000000 !important;
-  color: white;
-}
-
-/* Borde entre columnas */
-.footer-column {
-  border-left: 1px solid white;
-  padding-left: 20px; /* opcional */
-}
-
- .nav-divider {
-    display: none;
-  }
-
-  .icon-footer img {
-    width: 15px;
-}
-
-
-  }
 @media (max-width: 1400px) {
     img.logo-footer {
     height: 30px !important;
@@ -862,14 +801,86 @@ footer {
 
 #section-AboutUS {
   height: 60vh; /* Ocupa al menos toda la altura de la pantalla */
+  overflow: hidden;
 }
 #section-testimonials1 {
   height: 25vh; 
 }
 }
 
+@media (min-width: 992px) {
+.logo-footer {
+    height: 40px !important;
+  width: auto !important;
+}
+  .section3,
+  .section4,
+  .section5 {
+    display: none;
+  }
 
-/* Fondo blanco para el menú expandido en pantallas pequeñas */
+  .section2 {
+    position: absolute;
+    right: 10rem; /* Ajusta el margen derecho según necesidad */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section6 {
+    position: absolute;
+    right: 2rem; /* Ajusta para separarlo del teléfono */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .phone-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espacio entre icono y texto */
+  }
+
+  .phone-nav .phone-number {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .phone-nav .phone-number:hover {
+    color: #30D5C8;
+  }
+
+/* Estilos del footer */
+footer {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #000000 !important;
+  color: white;
+}
+
+/* Borde entre columnas */
+.footer-column {
+  border-left: 1px solid white;
+  padding-left: 20px; /* opcional */
+}
+
+ .nav-divider {
+    display: none;
+  }
+
+  .icon-footer img {
+    width: 15px;
+}
+
+
+  }
+
 @media (max-width: 991.98px){
 
 
@@ -1162,46 +1173,43 @@ footer {
   margin-top: 4px;
   margin-left: 0px;
 }
+
+#section-choose {
+  height: 90vh; /* altura natural según el contenido */
+}
+
 #section-testimonials1 {
-  height: 25vh; 
+  height: 30vh; 
+  margin-bottom: 50px;
 }
 
 #section-testimonials2 {
-  height: 63vh; 
+  height: 83vh; 
 }
 
-}
-
-@media (max-width: 576px) {
-
-  #section-AboutUS {
-  height: 60vh; /* Ocupa al menos toda la altura de la pantalla */
-}
 }
 
 @media (max-width: 768px) {
 
   #section-AboutUS {
-  height: 80vh; /* Ocupa al menos toda la altura de la pantalla */
+  height: 90vh; /* Ocupa al menos toda la altura de la pantalla */
 }
 
 #section-Ourservices {
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  margin-top: -85px;
+  margin-top: -40px;
 }
 
 #section-choose {
-  height: 130vh; /* altura natural según el contenido */
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #009DE0, #30D5C8); /* Degradado lineal */
+  height: 180vh; /* altura natural según el contenido */
 }
 
 
 
 #section-testimonials1 {
 
-  height: 23vh; 
+  height: 35vh; 
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin-top: -100px;
@@ -1209,7 +1217,7 @@ footer {
 
 
 #section-testimonials2 {
-  height: 50vh; 
+  height: 70vh; 
 }
 
 
@@ -1232,3 +1240,6 @@ footer {
 }
 }
 
+@media (max-width: 576px) {
+
+}
