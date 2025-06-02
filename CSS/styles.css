@@ -88,21 +88,24 @@ main {
 }
 
 .video-background {
-  width: 100vw;      /* ancho total de la ventana */
-  height: 100vh;     /* alto total de la ventana */
-  overflow: hidden;  /* oculta lo que sobresalga a los lados */
-  position: relative; /* para posicionar el video */
+  width: 100vw;       /* ancho total de la ventana */
+  height: 100vh;      /* alto total de la ventana */
+  overflow: hidden;   /* oculta lo que sobresalga */
+  position: relative; /* contenedor relativo para posicionar el video */
 }
 
 .video-background video {
-  height: 100vh;     /* siempre igual al alto de la ventana */
-  width: auto;       /* ancho proporcional */
-  position: absolute; 
+  position: absolute;
   top: 0;
-  left: 50%;         /* posiciona el centro del video al 50% del contenedor */
-  transform: translateX(-50%); /* centra horizontalmente el video */
-  object-fit: cover; /* para cubrir el área sin deformar */
+  left: 0;
+  width: 100%;        /* ancho total del contenedor */
+  height: 100%;       /* alto total del contenedor */
+  object-fit: cover;  /* cubre sin deformar, recortando si es necesario */
 }
+
+
+
+
   a {
     text-decoration: none;
     color: #ffffff;
