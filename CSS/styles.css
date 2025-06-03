@@ -1299,6 +1299,8 @@ footer {
 #close-video {
   right: 0;
   top: 15%;
+  border-radius: 10px;
+
 }
 
 #open-video {
