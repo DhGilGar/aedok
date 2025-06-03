@@ -65,6 +65,7 @@
   html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;  /* QUITA scroll horizontal */
 }
   
   body {
@@ -76,6 +77,8 @@
     flex-direction: column;
 
   }
+
+  
 .page-wrapper {
   min-height: 100vh; /* mejor usar vh */
   display: flex;
@@ -248,7 +251,7 @@ main {
   flex-direction: column;
   gap: 5px;
   align-items: flex-end;
-  z-index: 20;
+  z-index: 1000 !important;
 }
 
 .button {
@@ -333,8 +336,13 @@ main {
   transition: transform 0.5s ease, opacity 0.5s ease;
   background-color: #000000;
   width:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
 
 }
+
 
 /* Estado cerrado: pliega y desaparece */
 #section-Video.closed {
@@ -462,12 +470,6 @@ main {
 }
 
 
-#section-Video {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
-}
 
 
 #section-AboutUS {
@@ -982,18 +984,35 @@ footer {
   .section6 {
     display: block !important;
   }
-  .navbar-collapse.collapse.show {
-    margin-top: 20px;
-  }
 
 .nav-link.nav-button {      
       margin-left: 8px; 
       font-size: 16px;
   }
 
-  .navbar-toggler {
-    border-color: #707070;
-  }
+@media (max-width: 991.98px) {
+.navbar-collapse.collapse.show {
+  padding: 13px 20px 20px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  width: 100vw;
+  max-width: 100vw;
+  height: calc(100vh - 60px); /* altura menos navbar */
+  
+  margin: 0;
+  overflow-y: auto;  /* scroll vertical si necesario */
+  overflow-x: hidden; /* QUITA scroll horizontal aquí también */
+  
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 100;
+}
+}
+
+
 
 .collapse {
   transition: none !important;
@@ -1102,7 +1121,7 @@ footer {
   gap: 5px;
   align-items: stretch;    /* para que los hijos tengan la misma altura */
   justify-content: center;
-  z-index: 20;
+   z-index: 1000 !important;
   min-height: 70px;        /* altura mínima para el contenedor, ajusta según necesites */
 }
 
@@ -1236,20 +1255,20 @@ footer {
   }
 
 
-#section-Video {
-  display: none;
-}
+
 }
 
 @media (max-width: 576px) {
-
+ #section-AboutUS {
+  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+}
   #section-choose {
-  height: 125vh; /* altura natural según el contenido */
+  height: 175vh; /* altura natural según el contenido */
 }
 
   #section-testimonials1 {
 
-    height: 23vh; 
+    height: 35vh; 
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     margin-top: -120px;
@@ -1257,8 +1276,37 @@ footer {
 
 
   #section-testimonials2 {
-    height: 50vh; 
+    height: 70vh; 
   }
+
+
+
+#section-Video {
+  bottom: 0px;
+  left: 0px;
+  padding: 15px 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ocupa al menos toda la altura de la pantalla */
+  width: 100%;
+
+}
+
+
+/* Botón cerrar dentro del cuadro */
+#close-video {
+  right: 0;
+  top: 15%;
+  border-radius: 10px;
+
+}
+
+#open-video {
+  top: 20%;
+}
+
 
 
 

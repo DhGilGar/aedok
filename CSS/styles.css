@@ -711,6 +711,35 @@ main {
 }
 
 
+.Contenedor_team {
+  background: linear-gradient(to top, #292D32, #070808);
+  height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.card {
+  background-color: #000000; 
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1254,9 +1283,25 @@ footer {
     margin: 0 !important;
   }
 
-
+.Contenedor_team {
+  height: auto;
+  padding-bottom: 20%;  
+  padding-top: 10%;
+}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 576px) {
  #section-AboutUS {
@@ -1307,7 +1352,15 @@ footer {
   top: 20%;
 }
 
+.Contenedor_team {
+  height: auto;
+  padding-bottom: 30%;  
+  padding-top: 20%;
+}
 
-
+.card {
+  margin-left:30px;
+  margin-right: 30px;
+}
 
 }
