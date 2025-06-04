@@ -240,7 +240,7 @@ main {
 .button-container {
   position: fixed;
   bottom: 20px;
-  right: 60px;
+  right: 40px;
   display: flex;
   flex-direction: column;
   gap: 5px;
