@@ -984,6 +984,13 @@ main {
   background-color: #004E9D;
 }
 
+#section-DataQ {
+  height: auto;
+  background: linear-gradient(to top, #292D32, #070808);
+  width: 100%;
+  padding-bottom: 4vh !important;
+  padding-top: 4vh !important;
+}
 
 
 
@@ -1082,6 +1089,7 @@ main {
   display: block; /* Hace que "Us" baje a la segunda línea */
 }
 
+
 .button-container-3 {
   margin-top: -40px;
   margin-left: 50px;
@@ -1092,7 +1100,7 @@ main {
 }
 
 #section-AboutUS {
-  height: 60vh; /* Ocupa al menos toda la altura de la pantalla */
+  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
   overflow: hidden;
 }
 #section-testimonials1 {
@@ -1170,6 +1178,24 @@ footer {
     width: 15px;
 }
 
+#section-ELD_Solutions {
+  height: 120vh;
+}
+
+#Contenedor_contact {
+ padding-bottom: 70px;
+ margin: 0;
+}
+
+#section-Key_takeaways {
+  height: 170vh;
+}
+
+#section-teletrac {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
   }
 
@@ -1494,6 +1520,26 @@ footer {
 #section-testimonials2 {
   height: 83vh; 
 }
+#section-ELD_Solutions {
+  height: 165vh;
+}
+
+#Contenedor_contact {
+ padding-bottom: 70px;
+ margin: 0;
+}
+
+#section-Key_takeaways {
+  height: 240vh;
+  border-radius: 40px;
+}
+
+#section-teletrac {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 1700px;
+}
 
 }
 
@@ -1648,5 +1694,13 @@ footer {
   margin-top: -120px;
 }
 
+#section-DataQ {
+  padding-bottom: 15vh !important;
+}
+#section-teletrac {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 2160px;
+}
 
 }
