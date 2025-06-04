@@ -470,10 +470,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Ocupa al menos toda la altura de la pantalla */
+  height: auto;
   background: linear-gradient(to right, #009DE0, #30D5C8); /* Degradado lineal */
   max-width: 100%;
   overflow: hidden;
+  padding-bottom: 10vh !important;
 }
 
 #section-Ourservices {
@@ -482,32 +483,34 @@ main {
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
   width: 100%;
-  margin-top: -130px;
+  margin-top: -80px;
   padding-top: 30px;
 }
 
 #section-choose {
   display: flex;
-  flex-direction: column; /* asegura que el contenido fluya verticalmente */
-  height: 70vh; /* altura natural según el contenido */
-  margin-bottom: 10px;
+  flex-direction: column; 
+  height: auto; 
+  padding-bottom: 15vh ;
   background: linear-gradient(to right, #009DE0, #30D5C8); /* Degradado lineal */
 }
 
 #section-testimonials1 {
   display: flex;
-  height: 40vh; 
+  height: auto; 
   background: linear-gradient(to top, #121416, #070808);
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
   width: 100%;
-  margin-top: -100px;
+  margin-top: -60px;
+  padding-bottom: 5vh;
 }
 #section-testimonials2 {
   display: flex;
-  height: 50vh; 
+  height: auto; 
   background: linear-gradient(to top,  #070808, #121416);
   width: 100%;
+  padding-bottom: 15vh;
 }
 
 
@@ -1101,14 +1104,15 @@ main {
 }
 
 #section-AboutUS {
-  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
-  overflow: hidden;
+  margin-bottom: 30vh;
 }
-#section-testimonials1 {
+# {
   height: 25vh; 
 }
 
-
+  #section-Ourservices {
+  margin-top: -40vh;
+}
 
 
 }
@@ -1296,6 +1300,12 @@ footer {
       margin-left: 8px; 
       font-size: 16px;
   }
+
+  #section-Ourservices {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -36vh;
+}
 
 @media (max-width: 991.98px) {
 .navbar-collapse.collapse.show {
@@ -1504,17 +1514,13 @@ footer {
   margin-left: 0px;
 }
 
-#section-choose {
-  height: 90vh; /* altura natural según el contenido */
-}
+
 
 #section-testimonials1 {
-  height: 30vh; 
+   border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 
-#section-testimonials2 {
-  height: 83vh; 
-}
 
 
 #Contenedor_contact {
@@ -1533,34 +1539,13 @@ footer {
 
 @media (max-width: 768px) {
 
-  #section-AboutUS {
-  height: 90vh; /* Ocupa al menos toda la altura de la pantalla */
-}
-
-#section-Ourservices {
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  margin-top: -40px;
-}
-
-#section-choose {
-  height: 180vh; /* altura natural según el contenido */
-}
 
 
 
-#section-testimonials1 {
-
-  height: 35vh; 
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  margin-top: -100px;
-}
 
 
-#section-testimonials2 {
-  height: 70vh; 
-}
+
+
 
 
   .carousel {
@@ -1595,26 +1580,6 @@ footer {
 
 
 @media (max-width: 576px) {
- #section-AboutUS {
-  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
-}
-  #section-choose {
-  height: 175vh; /* altura natural según el contenido */
-}
-
-  #section-testimonials1 {
-
-    height: 35vh; 
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    margin-top: -120px;
-  }
-
-
-  #section-testimonials2 {
-    height: 70vh; 
-  }
-
 
 
 #section-Video {
