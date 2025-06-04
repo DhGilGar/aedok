@@ -69,7 +69,8 @@
 }
   
   body {
-    background-color: #000000;
+    background: linear-gradient(to top, #292D32, #070808);
+
     font-family: "SF Pro Display", sans-serif;
     margin: 0;
     padding: 0;
@@ -784,12 +785,7 @@ main {
   border-radius: 3px;
 }
 
-#section-ELD_Solutions {
-  height: 110vh;
-  background: linear-gradient(to top, #292D32, #070808);
-  width: 100%;
-  position: relative;
-}
+
 
 
 .custom-table {
@@ -818,15 +814,6 @@ main {
 
 
 
-#section-Key_takeaways {
-  height: 150vh;
-  background-color:#fff;
-  width: 100%;
-  border-radius: 80px;
-  margin-top: -80px !important;
-  z-index: 10;
-  position: absolute;
-}
 
 
 
@@ -880,13 +867,27 @@ main {
   margin-top: 3px; /* opcional: ajusta alineación vertical */
 }
 
+
+#section-ELD_Solutions {
+  height: auto;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+
+#section-Key_takeaways {
+  height: auto;
+  background-color:#fff;
+  width: 100%;
+  border-radius: 80px;
+}
+
+
 #section-teletrac {
   height: auto;
-  background: linear-gradient(to top, #292D32, #070808);
   width: 100%;
-  margin-top: 1200px;
-  z-index: 4; 
-  padding-top: 200px;
+  padding-top: 20px;
   padding-bottom: 80px;
 }
 
@@ -1106,6 +1107,10 @@ main {
 #section-testimonials1 {
   height: 25vh; 
 }
+
+
+
+
 }
 
 @media (min-width: 992px) {
@@ -1178,24 +1183,14 @@ footer {
     width: 15px;
 }
 
-#section-ELD_Solutions {
-  height: 120vh;
-}
 
 #Contenedor_contact {
  padding-bottom: 70px;
  margin: 0;
 }
 
-#section-Key_takeaways {
-  height: 170vh;
-}
 
-#section-teletrac {
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+
 
   }
 
@@ -1520,27 +1515,20 @@ footer {
 #section-testimonials2 {
   height: 83vh; 
 }
-#section-ELD_Solutions {
-  height: 165vh;
-}
+
 
 #Contenedor_contact {
  padding-bottom: 70px;
  margin: 0;
 }
 
+
+
+
+
 #section-Key_takeaways {
-  height: 240vh;
   border-radius: 40px;
 }
-
-#section-teletrac {
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 1700px;
-}
-
 }
 
 @media (max-width: 768px) {
@@ -1677,30 +1665,17 @@ footer {
   height: 70vh;
 }
 
-#section-ELD_Solutions {
-  height: 200vh;
-  background: linear-gradient(to top, #292D32, #070808);
-  width: 100%;
-}
+
 
 #Contenedor_contact {
  padding-bottom: 70px;
  margin: 0;
 }
 
-#section-Key_takeaways {
-  height: 330vh;
-  border-radius: 40px;
-  margin-top: -120px;
-}
 
 #section-DataQ {
   padding-bottom: 15vh !important;
 }
-#section-teletrac {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 2160px;
-}
+
 
 }
