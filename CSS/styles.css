@@ -79,13 +79,6 @@
   }
 
   
-.page-wrapper {
-  min-height: 100vh; /* mejor usar vh */
-  display: flex;
-  flex-direction: column;
-}
-
-
 main {
   flex: 1;
 }
@@ -485,8 +478,8 @@ main {
 #section-Ourservices {
   height: auto;
   background: linear-gradient(to top, #292D32, #070808);
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
   width: 100%;
   margin-top: -130px;
   padding-top: 30px;
@@ -504,8 +497,8 @@ main {
   display: flex;
   height: 40vh; 
   background: linear-gradient(to top, #121416, #070808);
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
   width: 100%;
   margin-top: -100px;
 }
@@ -727,6 +720,264 @@ main {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
+
+
+/* Fondo del modal y opacidad */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#legalModal .modal-dialog {
+  max-width: 70%; /* Cambia este valor según lo que necesites */
+  width: 70%;       /* O usa porcentajes si prefieres que sea responsive */
+  margin: 1.75rem auto;
+}
+
+/* Título principal */
+.modal-content h3 {
+  color: #30D5C8;
+  margin-bottom: 15px;
+}
+/* Subtítulos */
+.modal-content h4 {
+  color: #30D5C8;
+   margin-bottom: 10px;
+}
+
+
+/* Listas */
+.modal-content ul {
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.modal-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Enlaces */
+.modal-content a {
+  color: #009DE0;
+  text-decoration: none;
+}
+
+.modal-content a:hover {
+  color: #004E9D;
+}
+
+/* Scroll personalizado si es muy largo */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #009DE0;
+  border-radius: 3px;
+}
+
+#section-ELD_Solutions {
+  height: 110vh;
+  background: linear-gradient(to top, #292D32, #070808);
+  width: 100%;
+}
+
+
+.custom-table {
+  background-color: transparent;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.custom-table th,
+.custom-table td {
+  border: none; /* elimina todos los bordes */
+  border-top: 2px solid #30D5C8; /* solo borde superior visible y verde */
+  padding: 12px;
+  vertical-align: middle;
+  background-color: transparent;
+  color: white;
+  text-align: left; /* alinea el contenido a la izquierda */
+}
+
+.custom-table thead th {
+  border-top: none;
+  font-weight: bold;
+  background-color: transparent;
+  text-align: left; /* asegura alineación en encabezados también */
+}
+
+
+
+#section-Key_takeaways {
+  height: 150vh;
+  background-color:#fff;
+  width: 100%;
+  border-radius: 80px;
+  margin-top: -80px;
+}
+
+
+
+.video-container2 {
+  position: relative;
+  width: 67%;
+  height: 400px;
+  border: 2px solid #009dff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto; /* Centrar */
+  margin-top: 50px;
+}
+
+/* Video ocupa todo */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto encima */
+.video-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-overlay h2 {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.Icon_ELD {
+  width: 100px;   /* Ancho del icono */
+  height: auto;  /* Mantiene la proporción original */
+  margin-top: 10px; /* Espacio superior opcional */
+}
+
+.custom-icon {
+  width: 24px;    /* ancho del icono */
+  height: 24px;   /* alto del icono */
+  object-fit: contain; /* evita deformaciones */
+  margin-top: 3px; /* opcional: ajusta alineación vertical */
+}
+
+#section-teletrac {
+  height: auto;
+  background: linear-gradient(to top, #292D32, #070808);
+  width: 100%;
+ 
+}
+
+.section-ELD .d-flex.align-items-start {
+  align-items: center; /* centra verticalmente icono y texto */
+}
+
+.section-ELD .d-flex.align-items-start h5 {
+  margin: 0; /* elimina márgenes para alinear bien */
+}
+
+.section-ELD .d-flex.align-items-start a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block; /* para que solo ocupe el ancho del texto */
+}
+
+.section-ELD .d-flex.align-items-start a:hover {
+  color: #30D5C8; /* verde al hover */
+}
+
+#Contenedor_contact {
+ height:auto;
+ background: linear-gradient(to top, #292D32, #070808);
+ padding-bottom: 0px;
+}
+
+#Form_section {
+ background-color: #e2e2e2;
+ border-radius: 10px;
+
+}
+
+
+
+
+#container-form {
+  background-color: #e2e2e2;
+  border-radius: 20px;
+  padding: 20px 20px;
+
+  }
+
+  form {
+    border-radius: 12px;
+    max-width: auto;
+    width: 100%;
+    height: auto;
+  }
+
+
+  label {
+    display: block;
+    color: #292D32;
+    font-weight: 600px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="time"],
+  input[type="tel"],
+
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #30D5C8;
+    outline: none;
+  }
+
+#btn-enviar-formulario {
+  width: 100%;
+  padding: 12px;
+  background-color: #009DE0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btn-enviar-formulario:hover {
+  background-color: #004E9D;
+}
+
 
 
 
@@ -1361,6 +1612,27 @@ footer {
 .card {
   margin-left:30px;
   margin-right: 30px;
+}
+
+#legalModal .modal-dialog {
+  max-width: 100%; /* Cambia este valor según lo que necesites */
+  width: 100%;       /* O usa porcentajes si prefieres que sea responsive */
+  margin-top: 0px;
+}
+
+.modal-content {
+  border-radius: 12px;
+  height: 70vh;
+}
+
+#section-ELD_Solutions {
+  height: 200vh;
+  background: linear-gradient(to top, #292D32, #070808);
+  width: 100%;
+}
+
+#Contenedor_contact {
+ padding-bottom: 70px;
 }
 
 }
