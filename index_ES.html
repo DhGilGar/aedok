@@ -40,23 +40,23 @@
                 <!-- Navegación principal -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a href="index.html#section-AboutUS" class="nav-link nav-button">Sobre nosostros</a>
+                    <a href="index_ES.html" class="nav-link nav-button">Sobre nosostros</a>
                     </li>
                     <hr class="nav-divider">
                     <li class="nav-item">
-                    <a href="DataQ.html" class="nav-link nav-button">Defensa DataQ</a>
+                    <a href="DataQ_ES.html" class="nav-link nav-button">Defensa DataQ</a>
                     </li>
                     <hr class="nav-divider">
                     <li class="nav-item">
-                    <a href="ELD_Solutions.html" class="nav-link nav-button">Soluciones ELD</a>
+                    <a href="ELD_Solutions_ES.html" class="nav-link nav-button">Soluciones ELD</a>
                     </li>
                     <hr class="nav-divider">
                     <li class="nav-item">
-                    <a href="Contact.html" class="nav-link nav-button">Contacto</a>
+                    <a href="Contact_ES.html" class="nav-link nav-button">Contacto</a>
                     </li>
                     <hr class="nav-divider">
                     <li class="nav-item">
-                    <a href="Our_team.html" class="nav-link nav-button">Nuestro equipo</a>
+                    <a href="Our_team_ES.html" class="nav-link nav-button">Nuestro equipo</a>
                     </li>
                 </ul>
 
@@ -129,23 +129,21 @@
 <main>
    <!-- Contenedor de video de fondo -->
         <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="video/Kodea_videointro.mp4" type="video/mp4">
+            <video id="intro-video" autoplay muted loop playsinline poster="img/fallback.jpg">
+                <source src="video/test4.mp4" type="video/mp4">
+                <!-- Fallback en caso de que el video no sea soportado -->
+                Tu navegador no soporta la reproducción de video.
             </video>
-        </div>
+         </div>
 
-        <section id="section-Video">
-            <img src="images/Texas Trucking Show.avif">
-        <button id="close-video" aria-label="Cerrar"> 
-            <img src="images/close.png" alt="Abrir" style="width:24px; height:24px;">
-        </button>
+        <section id="section-Video" class="popup">
+            <div class="popup-content">
+                <img src="images/Texas Trucking Show.avif" alt="Texas Trucking Show">
+                <button id="close-video" aria-label="Cerrar">
+                <img src="images/close.png" alt="Cerrar" style="width:24px; height:24px;">
+                </button>
+            </div>
         </section>
-
-        <button id="open-video" aria-label="Abrir">
-            <img src="images/open.png" alt="Abrir" style="width:24px; height:24px;">
-            <h5 class="text-white">NEWS</h5>
-        </button>
-
 
 
     <section id="Interactive" class="Botón_interactivo">
@@ -156,21 +154,24 @@
       <div class="col-12  section-AboutUS" id="section-AboutUS">
                 <div class="container-fluid m-0" >
                     <div class="row d-flex align-items-center">
-                        <!-- Columna para el texto -->
+                   
                         <div class="col-12 col-md-6" id="container_about_us">
-                            <h1 class="title">About <span>Us</span></h1>
-                            <p class="text_about">
-                                <strong>Kodea LTSL</strong> is your comprehensive fleet solutions provider, offering everything from Electronic Logging Devices (ELDs) to CSA DataQ defense. We are dedicated to ensuring your fleet operates smoothly and efficiently while adhering to all regulatory standards. Trust Kodea to support your fleet management needs with innovative solutions tailored to your business. Let help you navigate the complexities of fleet operatzions with ease.
+                            <h1 class="title_ES">Sobre <span>Nosostros</span></h1>
+                            <p class="text_about_ES">
+                                <strong>Kodea LTSL</strong> es tu proveedor integral de soluciones para flotas, ofreciendo desde Dispositivos de Registro Electrónico (ELDs) hasta defensa CSA DataQ.
+                                Estamos comprometidos a garantizar que tu flota opere de manera eficiente y sin contratiempos, cumpliendo con todas las normativas vigentes.
+                                Confía en Kodea para apoyar la gestión de tu flota con soluciones innovadoras y adaptadas a las necesidades de tu negocio.
+                                Déjanos ayudarte a navegar con facilidad las complejidades de las operaciones de flotas.
                             </p>
-                            <div class="button-container-3">
-                              <a href="team_EN.html" class="solid-btn-3">
+                            <div class="button-container-3_ES">
+                              <a href="Our_team.html" class="solid-btn-3">
                                 <img src="images/arrow-up.png" alt="Arrow" class="arrow-icon" />
-                                <div class="btn-text">Our team</div>
+                                <div class="btn-text">Nuestro equipo</div>
                               </a>
                             </div>
                         </div>
                 
-                        <!-- Columna para la imagen -->
+                    
                         <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-end position-relative">
                             <img src="images/truak_about.png" alt="Truck" class="About_photo truck-img">
                         </div>
@@ -182,7 +183,7 @@
 
    <div class="col-12  section-Ourservices" id="section-Ourservices">
     <div class="container services-section py-5">
-        <h2 class="text-start" style="color:#30D5C8;">Nuestros Seervicios</h2>
+        <h2 class="text-start" style="color:#30D5C8;">Nuestros Servicios</h2>
         <hr style="border: 2px solid #30D5C8; width: 100%; opacity: 1; margin-top: 5px; border-radius: 20px;">
         
         <div class="row gy-5">
@@ -192,16 +193,18 @@
                 <div class="row align-items-center flex-lg-row-reverse">
                    
                     <div class="col-12 col-md-6 p-3 p-md-5">
-                        <h2 class="text-white">Fleet Solutions</h2>
-                        <h5 class="text-white">Welcome to our comprehensive solutions hub!</h5>
+                        <h2 class="text-white">Soluciones para Flotas</h2>
+                        <h5 class="text-white">¡Bienvenido a nuestro centro de soluciones integrales!</h5>
                         <p class="text-white">
-                            We provide top-notch ELDs, fuel management systems, tracking software, and much more 
-                            to streamline your operations. Trust us to enhance your efficiency and keep your fleet running smoothly.
+                            Ofrecemos dispositivos ELD de primera calidad, sistemas de gestión de combustible, software de seguimiento y mucho más para optimizar tus operaciones.
+                            Confía en nosotros para mejorar tu eficiencia y mantener tu flota funcionando sin problemas.
+
+
                         </p>
-                        <h5 class="text-white">Explore our offerings today!</h5>
+                        <h5 class="text-white">¡Explora todo lo que ofrecemos hoy!</h5>
                         <div class="button-container-2 mt-3">
-                            <a href="ELD_solutions_EN.html" class="btn solid-btn-2 me-2">Learn More</a>
-                            <a href="Contact_EN.html" class="btn outline-btn-2">Contact Sales</a>
+                            <a href="ELD_solutions_EN.html" class="btn solid-btn-2 me-2">Saber más</a>
+                            <a href="Contact_EN.html" class="btn outline-btn-2">Solicitar información</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 p-3 p-md-5">
@@ -211,23 +214,21 @@
             </div>
 
             
-            <!-- DataQ Defense -->
+
             <div class="col-12">
                 <div class="row align-items-center">
-                    <!-- TEXTO: punto 1 en pantallas grandes -->
                     <div class="col-12 col-md-6 p-3 p-md-5 order-1 order-lg-1">
-                        <h2 class="text-white">DataQ Defense</h2>
+                        <h2 class="text-white">Defensa DataQ</h2>
                         <p class="text-white">
-                            DataQ defense for HOS and VMV ensures robust protection and compliance for your operations.
-                            Let us help you achieve peace of mind with our expert defense strategies.
+                            DataQ Defense para HOS y VMV garantiza una protección sólida y el cumplimiento normativo en tus operaciones.
+                            Déjanos ayudarte a alcanzar la tranquilidad con nuestras estrategias de defensa especializadas.
                         </p>
                         <div class="button-container-2 mt-3">
-                            <a href="DataQ_Defense_EN.html" class="btn solid-btn-2 me-2">Learn More</a>
-                            <a href="Contact_EN.html" class="btn outline-btn-2">Contact Sales</a>
+                            <a href="DataQ_Defense_EN.html" class="btn solid-btn-2 me-2">Saber más</a>
+                            <a href="Contact_EN.html" class="btn outline-btn-2">Solicitar información</a>
                         </div>
                     </div>
 
-                    <!-- IMAGEN: punto 2 en pantallas grandes -->
                     <div class="col-12 col-md-6 p-3 p-md-5 order-2 order-lg-2">
                         <img src="images/Our_services2.png" alt="DataQ Defense" class="img-fluid">
                     </div>
@@ -236,20 +237,21 @@
 
 
 
-            <!-- Ticket Defense -->
+
             <div class="col-12">
                 <div class="row align-items-center flex-lg-row-reverse">
                     
                     <div class="col-12 col-md-6 p-3 p-md-5">
-                        <h2 class="text-white">Ticket Defense</h2>
+                        <h2 class="text-white">Defensa de Multas</h2>
                         <p class="text-white">
-                            We specialize in LTL ticket defense, helping you navigate the complexities of traffic violations.
-                            Our team is dedicated to gathering evidence and building a strong case on your behalf.
-                            With our expertise, you can feel confident in your defense. Let us support you in achieving the best outcome.
+                            Nos especializamos en la defensa de multas LTL, ayudándote a manejar las complejidades de las infracciones de tráfico.
+                            Nuestro equipo se dedica a recopilar pruebas y construir un caso sólido en tu defensa.
+                            Con nuestra experiencia, puedes tener la confianza de contar con una defensa efectiva.
+                            Déjanos apoyarte para conseguir el mejor resultado.
                         </p>
                         <div class="button-container-2 mt-3">
-                            <a href="DataQ_Defense_EN.html" class="btn solid-btn-2 me-2">Learn More</a>
-                            <a href="Contact_EN.html" class="btn outline-btn-2">Contact Sales</a>
+                            <a href="DataQ_Defense_EN.html" class="btn solid-btn-2 me-2">Saber más</a>
+                            <a href="Contact_EN.html" class="btn outline-btn-2">Solicitar información</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 p-3 p-md-5">
@@ -315,11 +317,11 @@
       
      <div class="col-12  section-testimonials1" id="section-testimonials1">
                     <div class="container services-section">
-                        <h2 style="color:#30D5C8;" class="text-start mt-5">Testimonials</h2>
+                        <h2 style="color:#30D5C8;" class="text-start mt-5">Testimonios</h2>
                         <hr style="border: 2px solid white; width: 100%; opacity: 1; margin-top: 5px; border-radius: 20px; ">
                         <div class="text-center">
-                            <h1 class="custom-title text-white">Don’t take our word for it</h1>
-                            <h1 class="custom-title text-white">Over 1xx+ people trust us</h1>
+                            <h1 class="custom-title text-white">No es solo lo que decimos, es lo que hacemos</h1>
+                            <h1 class="custom-title text-white">Más de 1xx clientes satisfechos nos respaldan</h1>
                         </div>
                     </div>
       </div>
@@ -374,9 +376,9 @@
                                         <h3 style="margin: 0;">★★★★★</h3>
                                         <img src="images/google_icon.png" alt="RELIABILITY" class="icon_google" style="width: 10%;">
                                     </div>
-                                    Without this company's expertise, our SAFER scores would be a lot worse.
-                                    They have saved me money from disputing incorrect data against our DOT #
-                                    and I can't thank them enough. Would highly recommend him and his company's services anytime!
+                                   Sin la experiencia de esta empresa, nuestros puntajes SAFER serían considerablemente peores.
+                                   Nos han ayudado a ahorrar dinero al disputar datos incorrectos asociados a nuestro número DOT, y no puedo agradecerles lo suficiente.
+                                   Recomiendo ampliamente a esta persona y a los servicios de su empresa en cualquier momento.
                                     <div class="author"><strong>Adam</strong></div>
                                     <a href="https://www.ejemplo.com">
                                         <div style="display: flex; justify-content: flex-end;">
@@ -389,7 +391,9 @@
                                         <h3 style="margin: 0;">★★★★★</h3>
                                         <img src="images/google_icon.png" alt="RELIABILITY" class="icon_google" style="width: 10%;">
                                     </div>
-                                    I recently had the pleasure of working with Kodea LTS for Some Dot issues I had. I was very impressed with their professionalism, knowledge, and attention to detail. They were able to answer all of my questions in a clear and concise manner, ...
+                                    Recientemente tuve el placer de trabajar con Kodea LTS para resolver algunos problemas relacionados con DOT que tenía.
+                                    Quedé muy impresionado con su profesionalismo, conocimiento y atención al detalle.
+                                    Pudieron responder todas mis preguntas de manera clara y concisa, ...
 
                                     <div class="author"><strong>Ryan</strong></div>
                                     <a href="https://www.ejemplo.com">
@@ -403,7 +407,8 @@
                                         <h3 style="margin: 0;">★★★★★</h3>
                                         <img src="images/google_icon.png" alt="RELIABILITY" class="icon_google" style="width: 10%;">
                                     </div>
-                                    Great assistance and this team does not just assist but as well explains for customers, like us, to understand the process fully. All a company can really ask for. Assistance and education when needed.
+                                    Excelente asistencia, y este equipo no solo ayuda, sino que también explica todo para que clientes como nosotros comprendamos completamente el proceso.
+                                    Todo lo que una empresa puede pedir: asistencia y formación cuando es necesario.
                                     <div class="author"><strong>Nica</strong></div>
                                     <a href="https://www.ejemplo.com">
                                         <div style="display: flex; justify-content: flex-end;">
@@ -426,21 +431,21 @@
 </main>
 <div class="button-container">
     <a href="https://eportal.kodea-lts.com/" target="_blank" class="button primary" style="text-decoration: none; color: inherit;">
-    <p class="title_button text-white">Kodea Portal</p>
-    <p class="description_button text-white">A set of specialised solutions for road transport.</p>
+    <p class="title_button text-white">Portal Kodea</p>
+    <p class="description_button text-white">Un conjunto de soluciones especializadas para el transporte por carretera</p>
     <span class="arrow text-white">↗</span>
 </a>
                   
     <div class="secondary-buttons">
           <div class="secondary-container">
               <a href="tel:+12816884303" class="button secondary">
-                <p class="title_button">Call Us<br> NOW</p>
+                <p class="title_button">Llámanos<br> AHORA</p>
                 <span class="arrow">↗</span>
               </a>
           </div>
           <div class="secondary-container">
               <a href="https://wa.me/12816884303?text=Hola,%20quiero%20más%20información" target="_blank" class="button secondary">
-                   <p class="title_button">Chat<br> With US</p>
+                   <p class="title_button">Chatea<br> Con Nosotros</p>
                    <span class="arrow">↗</span>
              </a>
           </div>
@@ -470,23 +475,23 @@
       <div class="col-md-1 footer-column">
           <ul class="navbar-nav">
                     <li class="footer-item">
-                    <a href="index.html#section-AboutUS" class="footer-link footer-button">About US</a>
+                    <a href="index.html#section-AboutUS" class="footer-link footer-button">Sobre Nosotros</a>
                     </li>
                     
                     <li class="footer-item">
-                    <a href="DataQ.html" class="footer-link footer-button">DataQ Defense</a>
+                    <a href="DataQ.html" class="footer-link footer-button">Defensa DataQ</a>
                     </li>
                     
                     <li class="footer-item">
-                    <a href="ELD_Solutions.html" class="footer-link footer-button">ELD Solutions</a>
+                    <a href="ELD_Solutions.html" class="footer-link footer-button">Soluciones ELD</a>
                     </li>
                     
                     <li class="footer-item">
-                    <a href="Contact.html" class="footer-link footer-button">Contact</a>
+                    <a href="Contact.html" class="footer-link footer-button">Contacto</a>
                     </li>
                     
                     <li class="footer-item">
-                    <a href="Our_team.html" class="footer-link footer-button">Our team</a>
+                    <a href="Our_team.html" class="footer-link footer-button">Nuestro equipo</a>
                     </li>
                 </ul>
 
@@ -496,7 +501,7 @@
       <!-- Columna 3 -->
       <div class="col-md-3  footer-column">
         <p class="text-white">© 2025 Kodea. Version | x.xx - © Kodea Portal</p>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal">Legal Notice | Cookies Policy</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal">Aviso Legal | Política de Cookies</a>
       </div>
 
       <!-- Columna 4 -->

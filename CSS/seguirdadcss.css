@@ -65,7 +65,7 @@
   html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;  
+  overflow-x: hidden;  /* QUITA scroll horizontal */
 }
   
   body {
@@ -84,40 +84,24 @@ main {
   flex: 1;
 }
 
-  .video-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  #video-poster,
-  #intro-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-#video-poster {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30%;
-  height: 30%;
-  object-fit: contain; 
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  transition: opacity 1s ease;
-  background-color: #ffffff;
-  border-radius: 20px;
+.video-background {
+  width: 100vw;       /* ancho total de la ventana */
+  height: 100vh;      /* alto total de la ventana */
+  overflow: hidden;   /* oculta lo que sobresalga */
+  position: relative; /* contenedor relativo para posicionar el video */
 }
-  #intro-video {
-    z-index: 1;
-  }
- 
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;        /* ancho total del contenedor */
+  height: 100%;       /* alto total del contenedor */
+  object-fit: cover;  /* cubre sin deformar, recortando si es necesario */
+}
+
+
+
   a {
     text-decoration: none;
     color: #ffffff;
@@ -193,15 +177,15 @@ main {
     text-decoration: none; 
 }
 .navbar-toggler {
-    border: none; 
-    background-color: transparent; 
+    border: none; /* Elimina el borde por defecto */
+    background-color: transparent; /* Fondo transparente */
     padding: 0.5rem 0.75rem;
     outline: none;
   }
   
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-
+    /* Esto pone el ícono de hamburguesa en blanco */
   }  
   .navbar-toggler:focus,
   .navbar-toggler:active {
@@ -244,10 +228,11 @@ main {
     border: 3px solid #00aeef;
   }
   
+  /* Imagen de la bandera */
   .flag-img {
-    height: 15px; 
-    width: auto;  
-    margin-right: 8px;
+    height: 15px; /* Ajusta la altura de la bandera */
+    width: auto;  /* Mantiene la proporción de la imagen */
+    margin-right: 8px; /* Espacio entre la bandera y el texto */
   }
   
 
@@ -331,53 +316,79 @@ main {
 }
 
 
-
+/* Cuadro flotante */
 #section-Video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); 
+  bottom: 0px;
+  left: 0px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: auto;
+  z-index: 10;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  background-color: #000000;
+  width:auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 100;
-  transition: opacity 0.5s ease;
+  justify-content: center;
+  height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+
 }
 
 
-.popup-content {
-  background-color: #000;
-  padding: 20px;
-  padding-top: 60px;
-  border-radius: 10px;
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+/* Estado cerrado: pliega y desaparece */
+#section-Video.closed {
+  transform: translateX(-150%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-
+/* Botón cerrar dentro del cuadro */
 #close-video {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
   border: none;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+  z-index: 11;
+  background-color: transparent;
+  background-color: #000000;
 }
 
+#open-video {
+  position: fixed;
+  background-color: #000000;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  border: none;
+  width: 90px;
+  height: 80px;
+  cursor: pointer;
+  line-height: 40px;
+  z-index: 12;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
 
-#section-Video.closed {
+/* Cuando el cuadro esté abierto, ocultamos el botón abrir */
+#section-Video:not(.closed) ~ #open-video {
   opacity: 0;
   pointer-events: none;
 }
 
 #Icon-mov a span {
   position: absolute;
-  top: -80px; 
+  top: -80px; /* Mueve el icono hacia arriba */
   left: 50%;
   width: 30px;
   height: 50px;
@@ -387,6 +398,7 @@ main {
   box-sizing: border-box;
 }
 
+/* Botón de la sección 10 */
 .Botón_interactivo a {
   position: absolute;
   bottom: 20px;
@@ -409,7 +421,7 @@ main {
 
 #Interactive a span {
   position: absolute;
-  top: -80px; 
+  top: -80px; /* Mueve el icono hacia arriba */
   left: 50%;
   width: 30px;
   height: 50px;
@@ -433,7 +445,7 @@ main {
   box-sizing: border-box;
 }
 
-
+/* Animación del icono */
 @keyframes sdb10 {
 0% {
   transform: translate(0, 0);
@@ -459,7 +471,7 @@ main {
   align-items: center;
   justify-content: center;
   height: auto;
-  background: linear-gradient(to right, #009DE0, #30D5C8); 
+  background: linear-gradient(to right, #009DE0, #30D5C8); /* Degradado lineal */
   max-width: 100%;
   overflow: hidden;
   padding-bottom: 10vh !important;
@@ -480,7 +492,7 @@ main {
   flex-direction: column; 
   height: auto; 
   padding-bottom: 15vh ;
-  background: linear-gradient(to right, #009DE0, #30D5C8); 
+  background: linear-gradient(to right, #009DE0, #30D5C8); /* Degradado lineal */
 }
 
 #section-testimonials1 {
@@ -506,7 +518,7 @@ main {
   width: 90%;
   overflow: hidden;
   position: relative;
-  margin: 0 auto; 
+  margin: 0 auto; /* Esto centra el contenedor dentro de su padre */
   margin-top: 200 px;
 }
 .carousel {
@@ -549,15 +561,15 @@ main {
 
 
 .About_photo {
-  width: 100%; 
+  width: 100%; /* Ajusta el tamaño de la imagen */
 
 }
 
 .truck-img {
-  width: 120%; 
-  max-width: none; 
+  width: 120%; /* más grande que su contenedor */
+  max-width: none; /* que no se limite al 100% del contenedor padre */
   position: relative;
-  right: -20%; 
+  right: -20%; /* desplaza la imagen hacia fuera del contenedor a la derecha */
   z-index: 1;
 }
 
@@ -569,6 +581,7 @@ main {
   margin-top: 20px;
 }
 
+/* Botón sólido personalizado */
 .solid-btn-2 {
   padding: 5px 5px;
   background-color: #009DE0;
@@ -611,14 +624,6 @@ main {
   margin-left: 90px;
 }
 
-.button-container-3_ES {
-  display: flex;
-  justify-content: left;
-  margin-top: -60px;
-  margin-left: 250px;
-}
-
-
 .solid-btn-3 {
   display: flex;
   flex-direction: column;
@@ -658,12 +663,11 @@ main {
 }
 
 
-
 .text_about {
   color: white;
   text-align: left;
   position: relative;
-  padding: 20px 0; 
+  padding: 20px 0; /* Espacio arriba y abajo */
   margin-left: 90px;
   margin-top: -150px;
 
@@ -673,84 +677,39 @@ main {
 .text_about::after {
   content: "";
   display: block;
-  width: 100%; 
-  height: 3px;
+  width: 100%; /* Ajusta el ancho de la línea */
+  height: 3px; /* Grosor de la línea */
   background-color: white;
-  border-radius: 10px; 
-  margin: 40px auto; 
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 40px auto; /* Espaciado y centrado */
 }
 
 .text_about::before {
   content: "";
   display: block;
-  width: 85%; 
-  height: 3px; 
+  width: 85%; /* Ajusta el ancho de la línea */
+  height: 3px; /* Grosor de la línea */
   background-color: white;
-  border-radius: 10px; 
-  margin: 40px 0 40px auto; 
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 40px 0 40px auto; /* Alinea a la derecha */
 }
-
-
-.text_about_ES {
-  color: white;
-  text-align: left;
-  position: relative;
-  padding: 20px 0; 
-  margin-left: 250px;
-  margin-top: -150px;
-
-}
-
-
-.text_about_ES::after {
-  content: "";
-  display: block;
-  width: 100%; 
-  height: 3px;
-  background-color: white;
-  border-radius: 10px; 
-  margin: 40px auto; 
-}
-
-.text_about_ES::before {
-  content: "";
-  display: block;
-  width: 100%; 
-  height: 3px; 
-  background-color: white;
-  border-radius: 10px; 
-  margin: 40px 0 40px auto; 
-}
-
 
 .title {
-  font-size: 80px;  
-  color: white;  
-  text-align: left;
-  line-height: 1.0;  
-  word-break: break-word;  
+  font-size: 80px;  /* Tamaño de la fuente */
+  color: white;  /* Color del texto */
+  text-align: left;  /* Centrar el texto */
+  line-height: 1.0;  /* Ajustar el espacio entre líneas */
+  word-break: break-word;  /* Forzar el salto de línea si es necesario */
   margin-top: 40px;
 }
 
-.title_ES {
-  font-size: 80px;  
-  color: white;  
-  text-align: left;
-  line-height: 1.0;  
-  word-break: break-word;  
-  margin-top: 10px;
-}
-
-.title_ES span {
-  display: block; 
-}
-
 .title span {
-  display: block; 
+  display: block; /* Hace que "Us" baje a la segunda línea */
 }
 
 
 .Contenedor_team {
+  background: linear-gradient(to top, #292D32, #070808);
   height: calc(100vh - 180px);
   display: flex;
   align-items: center;
@@ -768,6 +727,7 @@ main {
 
 
 
+/* Fondo del modal y opacidad */
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
 }
@@ -781,24 +741,24 @@ main {
 }
 
 #legalModal .modal-dialog {
-  max-width: 70%; 
-  width: 70%;     
+  max-width: 70%; /* Cambia este valor según lo que necesites */
+  width: 70%;       /* O usa porcentajes si prefieres que sea responsive */
   margin: 1.75rem auto;
 }
 
-
+/* Título principal */
 .modal-content h3 {
   color: #30D5C8;
   margin-bottom: 15px;
 }
-
+/* Subtítulos */
 .modal-content h4 {
   color: #30D5C8;
    margin-bottom: 10px;
 }
 
 
-
+/* Listas */
 .modal-content ul {
   padding-left: 30px;
   margin-top: 10px;
@@ -808,7 +768,7 @@ main {
   margin-bottom: 8px;
 }
 
-
+/* Enlaces */
 .modal-content a {
   color: #009DE0;
   text-decoration: none;
@@ -818,7 +778,7 @@ main {
   color: #004E9D;
 }
 
-
+/* Scroll personalizado si es muy largo */
 .modal-content::-webkit-scrollbar {
   width: 6px;
 }
@@ -839,20 +799,20 @@ main {
 
 .custom-table th,
 .custom-table td {
-  border: none; 
-  border-top: 2px solid #30D5C8; 
+  border: none; /* elimina todos los bordes */
+  border-top: 2px solid #30D5C8; /* solo borde superior visible y verde */
   padding: 12px;
   vertical-align: middle;
   background-color: transparent;
   color: white;
-  text-align: left; 
+  text-align: left; /* alinea el contenido a la izquierda */
 }
 
 .custom-table thead th {
   border-top: none;
   font-weight: bold;
   background-color: transparent;
-  text-align: left; 
+  text-align: left; /* asegura alineación en encabezados también */
 }
 
 
@@ -867,11 +827,11 @@ main {
   border: 2px solid #009dff;
   border-radius: 15px;
   overflow: hidden;
-  margin: 0 auto; 
+  margin: 0 auto; /* Centrar */
   margin-top: 50px;
 }
 
-
+/* Video ocupa todo */
 .video-bg {
   position: absolute;
   top: 0;
@@ -881,7 +841,7 @@ main {
   object-fit: cover;
 }
 
-
+/* Texto encima */
 .video-overlay {
   position: relative;
   z-index: 2;
@@ -898,16 +858,16 @@ main {
 }
 
 .Icon_ELD {
-  width: 100px;  
-  height: auto; 
-  margin-top: 10px; 
+  width: 100px;   /* Ancho del icono */
+  height: auto;  /* Mantiene la proporción original */
+  margin-top: 10px; /* Espacio superior opcional */
 }
 
 .custom-icon {
-  width: 24px; 
-  height: 24px;  
-  object-fit: contain; 
-  margin-top: 3px; 
+  width: 24px;    /* ancho del icono */
+  height: 24px;   /* alto del icono */
+  object-fit: contain; /* evita deformaciones */
+  margin-top: 3px; /* opcional: ajusta alineación vertical */
 }
 
 
@@ -935,22 +895,22 @@ main {
 }
 
 .section-ELD .d-flex.align-items-start {
-  align-items: center; 
+  align-items: center; /* centra verticalmente icono y texto */
 }
 
 .section-ELD .d-flex.align-items-start h5 {
-  margin: 0; 
+  margin: 0; /* elimina márgenes para alinear bien */
 }
 
 .section-ELD .d-flex.align-items-start a {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
-  display: inline-block;
+  display: inline-block; /* para que solo ocupe el ancho del texto */
 }
 
 .section-ELD .d-flex.align-items-start a:hover {
-  color: #30D5C8; 
+  color: #30D5C8; /* verde al hover */
 }
 
 #Contenedor_contact {
@@ -1113,61 +1073,30 @@ main {
 }
 
 .text_about {
-  padding: 15px 0; 
+  padding: 15px 0; /* Espacio arriba y abajo */
   margin-left: 50px;
   margin-top: -80px;
 
 }
-
-
 .text_about::after {
-  height: 2px; 
-  margin: 20px auto; 
+  height: 2px; /* Grosor de la línea */
+  margin: 20px auto; /* Espaciado y centrado */
 }
 
 .text_about::before {
-  height: 2px; 
-  margin: 20px 0 20px auto; 
-  width: 85%; 
+  height: 2px; /* Grosor de la línea */
+  margin: 20px 0 20px auto; /* Alinea a la derecha */
+  width: 85%; /* Ajusta el ancho de la línea */
 }
 
 .title span {
-  display: block;
-}
-
-
-.text_about_ES {
-  padding: 15px 0; 
-  margin-left: 160px;
-  margin-top: -90px;
-
-}
-
-
-.text_about_ES::after {
-  height: 2px; 
-  margin: 20px auto; 
-}
-
-.text_about_ES::before {
-  height: 2px; 
-  margin: 20px 0 20px auto; 
-  width: 100%; 
-}
-
-.title_ES span {
-  display: block; 
+  display: block; /* Hace que "Us" baje a la segunda línea */
 }
 
 
 .button-container-3 {
   margin-top: -40px;
   margin-left: 50px;
-}
-
-.button-container-3_ES {
-  margin-top: -35px;
-  margin-left: 150px;
 }
 .solid-btn-3 {
   width: 100px;
@@ -1177,7 +1106,9 @@ main {
 #section-AboutUS {
   margin-bottom: 30vh;
 }
-
+# {
+  height: 25vh; 
+}
 
   #section-Ourservices {
   margin-top: -40vh;
@@ -1199,7 +1130,7 @@ main {
 
   .section2 {
     position: absolute;
-    right: 10rem; 
+    right: 10rem; /* Ajusta el margen derecho según necesidad */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -1209,7 +1140,7 @@ main {
 
   .section6 {
     position: absolute;
-    right: 2rem; 
+    right: 2rem; /* Ajusta para separarlo del teléfono */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -1220,7 +1151,7 @@ main {
   .phone-nav {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 8px; /* espacio entre icono y texto */
   }
 
   .phone-nav .phone-number {
@@ -1234,7 +1165,7 @@ main {
     color: #30D5C8;
   }
 
-
+/* Estilos del footer */
 footer {
   padding-left: 10px;
   padding-right: 10px;
@@ -1242,10 +1173,10 @@ footer {
   color: white;
 }
 
-
+/* Borde entre columnas */
 .footer-column {
   border-left: 1px solid white;
-  padding-left: 20px;
+  padding-left: 20px; /* opcional */
 }
 
  .nav-divider {
@@ -1303,10 +1234,10 @@ footer {
   } 
   .section3 {
   display: flex !important;
-  justify-content: center;    
-  align-items: center;         
-  gap: 40px;                
-  height: 50px;                
+  justify-content: center;      /* Centrado horizontal */
+  align-items: center;          /* Centrado vertical */
+  gap: 40px;                    /* Misma distancia entre ellos */
+  height: 50px;                 /* Ajusta si necesitas más o menos alto */
   background-color: white;
   margin-top: 5px;
   border-radius: 10px;
@@ -1315,7 +1246,7 @@ footer {
   .social-link {
     display: flex;
     align-items: center;
-    gap: 8px;                   
+    gap: 8px;                     /* Espacio entre icono y texto */
   }
 
   .social-link a {
@@ -1385,11 +1316,11 @@ footer {
   
   width: 100vw;
   max-width: 100vw;
-  height: calc(100vh - 60px); 
+  height: calc(100vh - 60px); /* altura menos navbar */
   
   margin: 0;
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;  /* scroll vertical si necesario */
+  overflow-x: hidden; /* QUITA scroll horizontal aquí también */
   
   position: fixed;
   top: 60px;
@@ -1418,21 +1349,21 @@ footer {
   .phone-nav-mobile {
   display: flex;
   align-items: center;
-  gap: 8px; 
+  gap: 8px; /* espacio entre icono y texto */
   }
 
-
+/* Estilo base de los links */
 .navbar-collapse.collapse.show .nav-link {
   color: #707070 !important;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
   line-height: 1.4;
-  margin-left: 16px; 
+  margin-left: 16px; /* margen izquierdo SOLO para los links */
   display: inline-block;
   transition: color 0.3s ease;
 }
 
-
+/* Color al hacer hover */
 .navbar-collapse.collapse.show .nav-link:hover {
   color: #30D5C8 !important;
 }
@@ -1464,13 +1395,13 @@ footer {
   text-align: center;
   color: #707070;
   font-size: 14px;
-  margin: 8px 0; 
+  margin: 8px 0; /* margen arriba y abajo */
 }
 
 .nav-divider {
   border: none;
   border-top: 1px solid #707070;
-  margin: 0;     
+  margin: 0;       /* sin márgenes ni padding a izquierda y derecha */
   padding: 0;
   width: 100%;
   box-sizing: border-box;
@@ -1478,7 +1409,7 @@ footer {
 
 .info-link {
   text-align: center;
-  margin: 8px 0; 
+  margin: 8px 0;  /* margen arriba y abajo */
 }
 
 .info-link a {
@@ -1505,44 +1436,44 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 5px;
-  align-items: stretch;   
+  align-items: stretch;    /* para que los hijos tengan la misma altura */
   justify-content: center;
    z-index: 1000 !important;
-  min-height: 70px;      
+  min-height: 70px;        /* altura mínima para el contenedor, ajusta según necesites */
 }
 
-
+/* Botón principal ocupa 50% y toma toda la altura del contenedor */
 .button.primary {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center; /* centra verticalmente el contenido */
   padding: 15px;
   box-sizing: border-box;
 }
 
-
+/* Contenedor de botones secundarios ocupa 50% y en fila */
 .secondary-buttons {
   width: 50%;
   display: flex;
   justify-content: flex-start;
-  align-items: stretch; 
+  align-items: stretch;  /* que los botones secundarios tengan misma altura */
 }
 
-
+/* Ocultar el segundo botón */
 .secondary-buttons .secondary-container:nth-child(2) {
   display: none;
 }
 
-
+/* Primer botón secundario ocupa todo el ancho y altura del contenedor */
 .secondary-buttons .secondary-container:nth-child(1) {
   width: 100%;
   height: 100%;
   display: flex;
 }
 
-
+/* El botón secundario ocupa 100% ancho y altura, y centra su contenido */
 .secondary-buttons .secondary-container:nth-child(1) .button.secondary {
   width: 100%;
   height: 100%;
@@ -1558,57 +1489,32 @@ footer {
 }
 
 .text_about {
-  padding: 0px 0; 
+  padding: 0px 0; /* Espacio arriba y abajo */
   margin-left: 0px;
   margin-top: 0px;
 
 }
 .text_about::after {
-  height: 2px; 
-  margin: 10px auto; 
+  height: 2px; /* Grosor de la línea */
+  margin: 10px auto; /* Espaciado y centrado */
 }
 
 .text_about::before {
-  height: 2px; 
-  margin: 10px 0 20px auto;
-  width: 100%; 
+  height: 2px; /* Grosor de la línea */
+  margin: 10px 0 20px auto; /* Alinea a la derecha */
+  width: 100%; /* Ajusta el ancho de la línea */
 }
 
 .title span {
-  display: inline;
+  display: inline; /* Hace que "Us" baje a la segunda línea */
 }
-
-.title_ES span {
-  display: inline;
-}
-
-.text_about_ES {
-  padding: 0px 0; 
-  margin-left: 0px;
-  margin-top: 0px;
-
-}
-.text_about_ES::after {
-  height: 2px; 
-  margin: 10px auto; 
-}
-
-.text_about_ES::before {
-  height: 2px; 
-  margin: 10px 0 20px auto; 
-  width: 100%; 
-}
-
 
 .button-container-3 {
   margin-top: 4px;
   margin-left: 0px;
 }
 
-.button-container-3_ES {
-  margin-top: 4px;
-  margin-left: 0px;
-}
+
 
 #section-testimonials1 {
    border-top-left-radius: 40px;
@@ -1635,9 +1541,16 @@ footer {
 
 
 
+
+
+
+
+
+
+
   .carousel {
     flex-direction: row;
-    transform: translateX(0);
+    transform: translateX(0); /* asegura posición inicial */
     transition: transform 0.5s ease-in-out;
   }
 
@@ -1649,7 +1562,7 @@ footer {
 .Contenedor_team {
   height: auto;
   padding-bottom: 20%;  
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 }
@@ -1677,13 +1590,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; 
+  height: 100%; /* Ocupa al menos toda la altura de la pantalla */
   width: 100%;
 
 }
 
 
-
+/* Botón cerrar dentro del cuadro */
 #close-video {
   right: 0;
   top: 15%;
@@ -1707,8 +1620,8 @@ footer {
 }
 
 #legalModal .modal-dialog {
-  max-width: 100%; 
-  width: 100%;     
+  max-width: 100%; /* Cambia este valor según lo que necesites */
+  width: 100%;       /* O usa porcentajes si prefieres que sea responsive */
   margin-top: 0px;
 }
 
@@ -1729,45 +1642,5 @@ footer {
   padding-bottom: 15vh !important;
 }
 
-
-#section-Video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  transition: opacity 0.5s ease;
-}
-
-
-.popup-content {
-  padding: 5px;
-  padding-top: 60px;
-
-  max-width: 100%;
-  max-height: 100%;
-
-
-}
-
-#close-video {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-
-#section-Video.closed {
-  opacity: 0;
-  pointer-events: none;
-}
 
 }

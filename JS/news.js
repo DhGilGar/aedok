@@ -1,13 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const closeBtn = document.getElementById('close-video');
-  const openBtn = document.getElementById('open-video');
-  const videoSection = document.getElementById('section-Video');
+  window.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('section-Video');
+    const closeBtn = document.getElementById('close-video');
 
-  closeBtn.addEventListener('click', () => {
-    videoSection.classList.add('closed');
-  });
+    // Mostrar el popup al cargar
+    popup.classList.remove('closed');
 
-  openBtn.addEventListener('click', () => {
-    videoSection.classList.remove('closed');
+    // Cerrar el popup al hacer clic en el botón
+    closeBtn.addEventListener('click', () => {
+      popup.classList.add('closed');
+    });
   });
-});

@@ -110,10 +110,10 @@
           <div class="section6">
               <!-- Contenedor de idiomas -->
               <div class="language-toggle">
-                <a href="index.html" class="language-option selected">
+                <a href="Contact.html" class="language-option selected">
                   <img src="https://flagcdn.com/us.svg" alt="English">
                 </a>
-                <a href="index_es.html" class="language-option">
+                <a href="Contact_ES.html" class="language-option">
                   <img src="https://flagcdn.com/mx.svg" alt="Español">
                 </a>
               </div>
@@ -129,58 +129,56 @@
 
   <div id="Contenedor_contact">
     <div class="container-fluid p-5">
-    
+      <div class="row align-items-center gy-4 my-4">
+        <!-- Texto -->
+        <div class="col-12 col-md-6 p-md-5 p-0">
+          <h2 style="color:#30D5C8">Book your appointment with us</h2>
+          <h4 class="text-white">We want to understand your needs. Schedule a meeting and let’s talk about how we can help you with the best solution tailored to you.</h4>
+          <ul>
+                        <li class="text-white">We offer high-quality ELDs</li>
+                        <li class="text-white">Tracking software</li>
+                        <li class="text-white">And much more to optimize your operations</li>
+                        <li class="text-white">Trust us to improve your efficiency and keep your fleet running smoothly</li>
+                      </ul>
+                      <h5 class="text-white">Explore our offerings today!</h5>
+        </div>
 
-    <div class="row align-items-center gy-4 my-4">
-      <!-- Texto -->
-      <div class="col-12 col-md-6 p-md-5 p-0">
-        <h2 style="color:#30D5C8">Book your appointment with us</h2>
-        <h4 class="text-white">We want to understand your needs. Schedule a meeting and let’s talk about how we can help you with the best solution tailored to you.</h4>
-        <ul>
-                      <li class="text-white">We offer high-quality ELDs</li>
-                      <li class="text-white">Tracking software</li>
-                      <li class="text-white">And much more to optimize your operations</li>
-                      <li class="text-white">Trust us to improve your efficiency and keep your fleet running smoothly</li>
-                    </ul>
-                    <h5 class="text-white">Explore our offerings today!</h5>
-      </div>
-
-      <div class="col-12 col-md-4 pe-1" id="Form_section">
-        <div class="d-flex justify-content-end">
-                <div class="col-12" id="container-form">
-                  <h2>Book an appointment</h2>
-                  <p>Complete the following form to choose date and time:</p>
-                
-                  <form action="https://formspree.io/f/tu_codigo_aqui" method="POST">
+        <div class="col-12 col-md-4 pe-1" id="Form_section">
+          <div class="d-flex justify-content-end">
+                  <div class="col-12" id="container-form">
+                    <h2>Book an appointment</h2>
+                    <p>Complete the following form to choose date and time:</p>
+                  
+                    <form action="https://formspree.io/f/tu_codigo_aqui" method="POST">
+                      
                     
-                  
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name" required>
 
-                    <label for="company">Company Name:</label>
-                    <input type="text" id="company" name="company" required>
-                  
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+                      <label for="company">Company Name:</label>
+                      <input type="text" id="company" name="company" required>
+                    
+                      <label for="email">E-mail:</label>
+                      <input type="email" id="email" name="email" required>
 
-                    <label for="phone">Company Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                      <label for="phone">Company Phone Number:</label>
+                      <input type="tel" id="phone" name="phone" required>
+                    
+                      <label for="date">Date:</label>
+                      <input type="date" id="date" name="date" required>
+                    
+                      <label for="time">Hour:</label>
+                      <input type="time" id="time" name="time" required>
+                    
+                      <label for="message">How can we help?</label>
+                      <textarea id="message" name="message" rows="4" cols="40"></textarea>
+                    
+                      <button type="button" id="btn-enviar-formulario">Enviar</button>
+                    </form>
+                  </div>
                   
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
-                  
-                    <label for="time">Hour:</label>
-                    <input type="time" id="time" name="time" required>
-                  
-                    <label for="message">How can we help?</label>
-                    <textarea id="message" name="message" rows="4" cols="40"></textarea>
-                  
-                    <button type="button" id="btn-enviar-formulario">Enviar</button>
-                  </form>
                 </div>
-                
-              </div>
-  </div>
+    </div>
 
       </div>
     </div>
@@ -188,8 +186,15 @@
         
        
      
-    </div>
-  </div>          
+  </div>
+
+ <div id="Contenedor_Map">
+  
+       <iframe src="https://www.google.com/maps/d/embed?mid=1axiV-Oyr8ev2au6NZlDtmHCRn8Drv08&ehbc=2E312F" width="640" height="480"></iframe>
+     
+  </div>
+  
+  
 </main>
 
 
