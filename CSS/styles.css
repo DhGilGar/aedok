@@ -751,11 +751,11 @@ main {
 
 
 .Contenedor_team {
-  height: calc(100vh - 180px);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  margin-top: 10vh;
 }
 
 .card {
@@ -764,6 +764,7 @@ main {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
 }
 
 
@@ -1039,7 +1040,9 @@ main {
 
 
 
-
+.border-start {
+  border-left: 2px solid white; /* Cambia el grosor aquí */
+}
 
 
 
@@ -1651,6 +1654,9 @@ footer {
   padding-bottom: 20%;  
   padding-top: 20%;
 }
+.border-start {
+  border-left:none;
+}
 
 }
 
@@ -1770,4 +1776,21 @@ footer {
   pointer-events: none;
 }
 
+
+.border-start {
+  border-left:none;
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
