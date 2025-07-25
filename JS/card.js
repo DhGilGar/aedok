@@ -10,3 +10,9 @@
       cardContainer.classList.add("col-md-3");
     }
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".card.card-person").forEach(card => {
+    card.addEventListener("click", () => expandCard(card));
+  });
+});
