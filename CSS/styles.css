@@ -749,9 +749,35 @@ main {
   display: block; 
 }
 
+/* SOLO para la página Our_team.html */
+body.our-team-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
 
+body.our-team-page main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+body.our-team-page .Contenedor_team {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  background-color: #ffffff;
+}
+
+/* Asegúrate que el footer no tiene position: absolute o fixed */
+body.our-team-page footer {
+  margin-top: auto;
+}
 .Contenedor_team {
-  height: auto;
+  flex: 1; /* Ocupa todo el espacio disponible entre header y footer */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -768,7 +794,6 @@ main {
     flex-wrap: wrap;
   }
 
-  /* Animación al pasar el ratón */
   .card-person:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
