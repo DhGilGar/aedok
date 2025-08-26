@@ -451,6 +451,107 @@ main {
 }
 }
 
+  
+
+
+#video_HOS {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+#video_HOS img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+
+}
+
+/* Botón Play */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: red;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+}
+.play-button::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 25px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  margin-left: 5px;
+}
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Menú de idioma */
+#language-menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 3;
+  text-align: center;
+}
+#language-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+#language-menu a:last-child {
+  margin-bottom: 0;
+}
+#language-menu a:hover {
+  background: #f0f0f0;
+}
+.flag {
+  width: 20px;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -961,8 +1062,7 @@ body.our-team-page footer {
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* Relación 16:9 */
-  height: 0;
+  padding-bottom: 56.25%; 
   overflow: hidden;
 }
 
