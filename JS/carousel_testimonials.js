@@ -1,60 +1,65 @@
+const slides = document.querySelectorAll('.slide');
+const carousel = document.querySelector('.carousel');
+const indicatorsContainer = document.querySelector('.indicators');
+let currentIndex = 0;
+let interval;
+let slidesPerView = getSlidesPerView(); // 👈 detecta cuántos mostrar
 
-        const slides = document.querySelectorAll('.slide');
-        const carousel = document.querySelector('.carousel');
-        const indicatorsContainer = document.querySelector('.indicators');
-        const slideCount = slides.length;
-        let currentIndex = 0;
-        let interval;
+function getSlidesPerView() {
+    if (window.innerWidth <= 768) return 1; // móvil
+    if (window.innerWidth <= 1024) return 2; // tablet
+    return 3; // escritorio
+}
 
-        for (let i = 0; i < Math.ceil(slideCount / 3); i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('indicator');
-            if (i === 0) dot.classList.add('active');
-            dot.setAttribute('data-index', i);
-            dot.addEventListener('click', () => goToSlide(i));
-            indicatorsContainer.appendChild(dot);
-        }
-        
-        function updateIndicators() {
-            document.querySelectorAll('.indicator').forEach(dot => dot.classList.remove('active'));
-            document.querySelector(`.indicator[data-index="${currentIndex}"]`).classList.add('active');
-        }
+function createIndicators() {
+    indicatorsContainer.innerHTML = ""; // limpiar
+    const totalPages = Math.ceil(slides.length / slidesPerView);
 
-        function goToSlide(index) {
-            currentIndex = index;
-            carousel.style.transform = `translateX(-${100 * index}%)`;
-            updateIndicators();
-            restartAutoSlide();
-        }
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('indicator');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('data-index', i);
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(dot);
+    }
+}
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % Math.ceil(slideCount / 3);
-            goToSlide(currentIndex);
-        }
+function updateIndicators() {
+    document.querySelectorAll('.indicator').forEach(dot => dot.classList.remove('active'));
+    document.querySelector(`.indicator[data-index="${currentIndex}"]`).classList.add('active');
+}
 
-        function startAutoSlide() {
-            interval = setInterval(nextSlide, 10000);
-        }
+function goToSlide(index) {
+    currentIndex = index;
+    const offset = 100 * index;
+    carousel.style.transform = `translateX(-${offset}%)`;
+    updateIndicators();
+    restartAutoSlide();
+}
 
-        function restartAutoSlide() {
-            clearInterval(interval);
-            startAutoSlide();
-        }
+function nextSlide() {
+    const totalPages = Math.ceil(slides.length / slidesPerView);
+    currentIndex = (currentIndex + 1) % totalPages;
+    goToSlide(currentIndex);
+}
 
-        startAutoSlide();
+function startAutoSlide() {
+    interval = setInterval(nextSlide, 10000);
+}
 
+function restartAutoSlide() {
+    clearInterval(interval);
+    startAutoSlide();
+}
 
+// Recalcular cuando cambia el tamaño de pantalla
+window.addEventListener("resize", () => {
+    slidesPerView = getSlidesPerView();
+    createIndicators();
+    goToSlide(0);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
+// Inicialización
+createIndicators();
+startAutoSlide();
