@@ -359,7 +359,13 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* opcional */
+}
 #close-video {
   position: absolute;
   top: 10px;
@@ -467,7 +473,7 @@ main {
 
 }
 
-/* Botón Play */
+
 .play-button {
   position: absolute;
   top: 50%;
@@ -497,7 +503,7 @@ main {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Menú de idioma */
+
 #language-menu {
   display: none;
   position: absolute;
@@ -712,12 +718,7 @@ main {
   margin-left: 90px;
 }
 
-.button-container-3_ES {
-  display: flex;
-  justify-content: left;
-  margin-top: -60px;
-  margin-left: 250px;
-}
+
 
 
 .solid-btn-3 {
@@ -850,7 +851,7 @@ main {
   display: block; 
 }
 
-/* SOLO para la página Our_team.html */
+
 body.our-team-page {
   display: flex;
   flex-direction: column;
@@ -873,12 +874,12 @@ body.our-team-page .Contenedor_team {
   background-color: #ffffff;
 }
 
-/* Asegúrate que el footer no tiene position: absolute o fixed */
+
 body.our-team-page footer {
   margin-top: auto;
 }
 .Contenedor_team {
-  flex: 1; /* Ocupa todo el espacio disponible entre header y footer */
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1050,7 +1051,7 @@ body.our-team-page footer {
 .video-container2 {
   position: relative;
   width: 100%;
-  height: 430px;
+  height: auto;
   border: 2px solid #009dff;
   border-radius: 15px;
   overflow: hidden;
@@ -1345,10 +1346,7 @@ body.our-team-page footer {
   margin-left: 50px;
 }
 
-.button-container-3_ES {
-  margin-top: -35px;
-  margin-left: 150px;
-}
+
 .solid-btn-3 {
   width: 100px;
   height: 80px;
@@ -1371,11 +1369,11 @@ body.our-team-page footer {
     height: 40px !important;
   width: auto !important;
 }
-  .section3,
   .section4,
   .section5 {
     display: none;
   }
+
 
   .section2 {
     position: absolute;
@@ -1474,23 +1472,7 @@ footer {
     display: none !important;
   } 
 
-  .section3 {
-    background-color: rgb(255, 255, 255);
-    margin-top: 5px;
-    border-radius: 10px;
-    display: block !important;
 
-  } 
-  .section3 {
-  display: flex !important;
-  justify-content: center;    
-  align-items: center;         
-  gap: 40px;                
-  height: 50px;                
-  background-color: white;
-  margin-top: 5px;
-  border-radius: 10px;
-}
 
   .social-link {
     display: flex;
@@ -1510,13 +1492,23 @@ footer {
   }
 
   .section4 {
-    background-color: rgb(255, 255, 255);
+    background-color: #009DE0;
     margin-top: 5px;
     border-radius: 10px;
     display: block !important;
     padding-top: 4px;
     padding-bottom: 4px;
   } 
+
+.section4,
+.section4 * {
+  color: #fff !important; /* fuerza todo el texto dentro a blanco */
+}
+
+.section4 a {
+  color: #fff !important;
+  text-decoration: none; /* opcional */
+}
   .section5 {
     background-color: rgb(0, 0, 0);
     margin-top: 5px;
@@ -1674,23 +1666,9 @@ footer {
 
 
 
-.button-container {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90vw;
-  padding: 5px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  align-items: stretch;   
-  justify-content: center;
-   z-index: 1000 !important;
-  min-height: 70px;      
-}
-
+  .button-container {
+    display: none !important;
+  }
 
 .button.primary {
   width: 50%;
@@ -1785,10 +1763,7 @@ footer {
   margin-left: 0px;
 }
 
-.button-container-3_ES {
-  margin-top: 4px;
-  margin-left: 0px;
-}
+
 
 #section-testimonials1 {
    border-top-left-radius: 40px;
@@ -1831,7 +1806,8 @@ footer {
   padding-bottom: 20%;  
   padding-top: 20%;
 }
-
+ .popup-content img {
+    max-width: 90%; /* más pequeño que el ancho completo */
 
 }
 
@@ -1863,7 +1839,8 @@ footer {
 
 }
 
-
+ .popup-content img {
+    max-width: 80%; 
 
 #close-video {
   right: 0;
