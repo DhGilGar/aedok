@@ -1243,7 +1243,7 @@ body.our-team-page footer {
     font-size: 12px;
   }
   .nav-link.nav-button {      
-      margin-left: 8px; 
+      margin-left: 3px; 
       font-size: 12px;
   }
     p {
@@ -1789,7 +1789,6 @@ footer {
 @media (max-width: 768px) {
 
 
-
   .carousel {
     flex-direction: row;
     transform: translateX(0);
@@ -1807,20 +1806,11 @@ footer {
   padding-top: 20%;
 }
  .popup-content img {
-    max-width: 90%; /* más pequeño que el ancho completo */
+    max-width: 90%; 
 
 }
 
-
-
-
-
-
-
-
-
-
-
+}
 
 
 @media (max-width: 576px) {
@@ -1936,13 +1926,5 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
+}
 
