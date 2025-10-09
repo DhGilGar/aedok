@@ -1098,10 +1098,12 @@ body.our-team-page footer {
 
 
 #section-Key_takeaways {
-  height: auto;
-  background-color:#fff;
   width: 100%;
-  border-radius: 80px;
+  background-color: #fff;
+  padding-top: 80px;    
+  padding-bottom: 60px; 
+  height: auto;          
+    overflow: auto;
 }
 
 
@@ -1222,15 +1224,103 @@ body.our-team-page footer {
 }
 
 
+.reseller-icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.reseller-icon img {
+  width: 120px;   
+  height: auto;
+  display: inline-block;
+}
+
+
+#resellers-section {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 20px;
+}
 
 
 
 
 
+.resellers-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+
+}
+
+.reseller-btn {
+  padding: 20px 20px;
+  background-color:  white;
+  border: solid 2px #009DE0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  width:250px;
+}
+
+.reseller-btn:hover {
+  background-color:  #004E9D;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.resellers-buttons img {
+  width: 200px; 
+  height: auto; 
+}
 
 
 
+.section-title {
+  background-color: #fff;       /* fondo blanco */
+  padding-top: 120px;           /* espacio superior para separar la barra de navegación */
+  padding-bottom: 30px;         /* espacio inferior */
+  width: 100%;
+}
 
+
+
+.section-logo img {
+  width: 300px; /* ajusta según el tamaño de tu logo */
+  height: auto;
+  display: inline-block;
+}
+
+.section-title hr {
+  border: 2px solid #30D5C8;
+  border-radius: 20px;
+  width: 100%;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+
+#Contenedor_Docudrive {
+ height:auto;
+  background: linear-gradient(to top, #292D32, #070808);
+ padding-bottom: 0px;
+}
+
+#Image_section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+#Image_section,
+#Image_section > div,
+#container-form {
+  background-color: transparent; /* o #fff si quieres blanco */
+}
 
 @media (max-width: 1400px) {
     img.logo-footer {
@@ -1440,8 +1530,8 @@ footer {
 }
 
  .popup-content img {
-        max-width: 80%;  /* más pequeña que el contenedor */
-        max-height: 70vh; /* que no sobrepase la pantalla */
+        max-width: 80%;  
+        max-height: 70vh; 
     }
 
 
