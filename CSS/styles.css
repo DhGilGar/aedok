@@ -552,9 +552,15 @@ main {
 
 
 
-
-
-
+#section-Ecosystem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background: linear-gradient(to right, #009DE0, #30D5C8); 
+  max-width: 100%;
+  overflow: hidden;
+}
 
 
 
@@ -679,12 +685,13 @@ main {
   padding: 5px 5px;
   background-color: #009DE0;
   color: white;
-  border: none;
+  border: 2px solid #009DE0;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   transition: background-color 0.3s ease;
-  width: 130px;
+  width: auto;
+  padding: 10px;
 }
 
 .solid-btn-2:hover {
@@ -699,9 +706,10 @@ main {
   border: 2px solid #009DE0;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   transition: all 0.3s ease;
-  width: 130px;
+  width: auto;
+  padding: 10px;
 }
 
 .outline-btn-2:hover {
@@ -1050,12 +1058,16 @@ body.our-team-page footer {
 .video-container2 {
   position: relative;
   width: 100%;
-  height: auto;
-  border: 2px solid #009dff;
   border-radius: 15px;
   overflow: hidden;
-  margin: 0 auto; 
-  margin-top: 50px;
+  margin: 50px 0 0 0;
+}
+
+.video-container2 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
 }
 
 
@@ -1103,7 +1115,18 @@ body.our-team-page footer {
   padding-top: 80px;    
   padding-bottom: 60px; 
   height: auto;          
-    overflow: auto;
+  overflow: auto;
+}
+
+
+
+#section-Kodea {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 80px !important;
+  padding-bottom: 60px !important;
+  height: auto;
+  overflow: auto;
 }
 
 
