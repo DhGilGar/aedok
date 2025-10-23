@@ -111,32 +111,25 @@
 <main>
 
         <div class="video-background">
-            <video id="intro-video" autoplay muted loop playsinline poster="img/fallback.jpg">
-                <source src="video/VideoKodea_home.mp4" type="video/mp4">
-
-                 Your browser does not support HTML5 videos.
+        <video id="intro-video" autoplay muted loop playsinline poster="img/fallback.jpg">
+            <source src="video/VideoKodea_home.mp4" type="video/mp4">
+            <source src="video/VideoKodea_home.webm" type="video/webm">
+            Your browser does not support HTML5 videos.
             </video>
-         </div>
+        </div>
 
 
          
-<section id="section-Video" class="popup">
-    <div class="popup-content">
-        <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube-nocookie.com/embed/4Bjv3uvHZw8?autoplay=1&mute=1&rel=0&modestbranding=1"
-            title="New Kodea Portal"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
-
-        <button id="close-video" aria-label="Cerrar">
-            <img src="images/close.png" alt="Cerrar" style="width:28px; height:24px;">
-        </button>
-    </div>
-</section>
+        <section id="section-Video" class="popup">
+            <div class="popup-content">
+                <a href="https://louisianatruckshows.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/Lusiana-Trucking-Show.png" alt="Annual Lusiana Trucking Show">
+                </a>
+                <button id="close-video" aria-label="Cerrar">
+                    <img src="images/close.png" alt="Cerrar" style="width:28px; height:24px;">
+                </button>
+            </div>
+        </section>
 
 
 
@@ -644,6 +637,24 @@
 <script src="JS/"></script>   
 <script src="JS/carousel_testimonials.js"></script>
 <script src="JS/news.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("intro-video");
+    const sourceMP4 = document.getElementById("videoSource");
+    const sourceWebM = document.getElementById("videoSourceWebm");
+
+
+    if (window.innerWidth < 768) {
+        sourceMP4.src = "video/VideoKodea_vertical.mp4";
+        sourceWebM.src = "video/VideoKodea_vertical.webm";
+    } else {
+        sourceMP4.src = "video/VideoKodea_home.mp4";
+        sourceWebM.src = "video/VideoKodea_home.webm";
+    }
+
+    video.load();
+});
+</script>
 
 
 </body>
