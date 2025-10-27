@@ -112,18 +112,17 @@
 <div class="video-background">
     <img src="images/fallback.jpg" alt="Imagen de carga" class="video-fallback">
 
-
     <video id="video-desktop" autoplay muted loop playsinline preload="auto" class="video-desktop">
         <source src="video/VideoKodea_home.mp4" type="video/mp4">
         <source src="video/VideoKodea_home.webm" type="video/webm">
     </video>
-
 
     <video id="video-mobile" autoplay muted loop playsinline preload="auto" class="video-mobile">
         <source src="video/VideoKodea_vertical.mp4" type="video/mp4">
         <source src="video/VideoKodea_vertical.webm" type="video/webm">
     </video>
 </div>
+
 
     <section id="Interactive" class="Botón_interactivo">
         <a href="index.html#section-AboutUS"><span></span></a>
@@ -628,30 +627,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JS/carousel_testimonials.js"></script>
 <script>
+const fallback = document.querySelector(".video-fallback");
 const desktopVideo = document.getElementById("video-desktop");
 const mobileVideo = document.getElementById("video-mobile");
-const fallback = document.querySelector(".video-fallback");
 
+// Detectar si es móvil
+const isMobile = window.innerWidth <= 768;
+const activeVideo = isMobile ? mobileVideo : desktopVideo;
 
-let effectiveType = navigator.connection ? navigator.connection.effectiveType : '4g';
-console.log("Tipo de conexión:", effectiveType);
+activeVideo.addEventListener("canplaythrough", () => {
+    // mostrar el video con efecto
+    activeVideo.classList.add("active");
+    // desvanecer la imagen
+    fallback.style.opacity = "0";
 
-
-if(effectiveType === '2g' || effectiveType === '3g') {
-    desktopVideo.style.display = 'none';
-    mobileVideo.style.display = 'none';
-    fallback.style.display = 'block';
-} else {
-
-    [desktopVideo, mobileVideo].forEach(video => {
-        video.addEventListener("canplaythrough", () => {
-            fallback.style.display = "none";
-            video.play().catch(() => {
-                setTimeout(() => video.play(), 1000);
-            });
-        });
-    });
-}
+    // luego de la transición, ocultar la imagen
+    setTimeout(() => {
+        fallback.style.display = "none";
+    }, 1500);
+});
 </script>
 
 
