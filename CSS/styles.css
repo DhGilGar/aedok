@@ -91,6 +91,7 @@ main {
     overflow: hidden;
 }
 
+
 .video-background video {
     position: absolute;
     top: 0;
@@ -98,17 +99,28 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out;
 }
 
-.video-fallback {
+
+.video-background .video-fallback {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 5;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
 }
+
+
+.video-background video.active {
+    opacity: 1;
+}
+
 
 .video-desktop { display: block; }
 .video-mobile { display: none; }
