@@ -84,40 +84,41 @@ main {
   flex: 1;
 }
 
-  .video-background {
+.video-background {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-  }
+}
 
-  #video-poster,
-  #intro-video {
+.video-background video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-#video-poster {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30%;
-  height: 30%;
-  object-fit: contain; 
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  transition: opacity 1s ease;
-  background-color: #ffffff;
-  border-radius: 20px;
 }
-  #intro-video {
-    z-index: 1;
-  }
- 
+
+.video-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 5;
+}
+
+.video-desktop { display: block; }
+.video-mobile { display: none; }
+
+@media (max-width: 768px) {
+    .video-desktop { display: none; }
+    .video-mobile { display: block; }
+}
+
+
   a {
     text-decoration: none;
     color: #ffffff;
@@ -347,24 +348,7 @@ main {
 }
 
 
-.popup-content {
-    background-color: #000;
-    padding: 20px;
-    padding-top: 60px;
-    border-radius: 10px;
-    position: relative; 
-    max-width: 90%;
-    max-height: 90%;
-    overflow: auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-.popup-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px; 
-}
+
 #close-video {
   position: absolute;
   top: 10px;
@@ -1552,20 +1536,12 @@ footer {
  margin: 0;
 }
 
- .popup-content img {
-        max-width: 80%;  
-        max-height: 70vh; 
-    }
 
 
   }
 
 @media (max-width: 991.98px){
 
- .popup-content img {
-        max-width: 80%;  
-        max-height: 70vh; 
-}
 
 .section1 {
     background-color: rgb(255, 255, 255);
@@ -1943,9 +1919,6 @@ footer {
 
 }
 
- .popup-content img {
-    max-width: 100%; 
-
 
 
 .Contenedor_team {
@@ -1998,15 +1971,7 @@ footer {
 }
 
 
-.popup-content {
-  padding: 5px;
-  padding-top: 60px;
 
-  max-width: 100%;
-  max-height: 100%;
-
-
-}
 
 #close-video {
   position: absolute;
@@ -2031,4 +1996,4 @@ footer {
 
 
 }
-}
+
