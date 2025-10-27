@@ -110,17 +110,19 @@
 <main>
 
 <div class="video-background">
-    <img src="images/fallback.jpg" alt="Imagen de carga" class="video-fallback">
+  <img src="images/fallback.jpg" alt="Imagen de carga" class="video-fallback">
 
-    <video id="video-desktop" autoplay muted loop playsinline preload="auto" class="video-desktop">
-        <source src="video/VideoKodea_home.mp4" type="video/mp4">
-        <source src="video/VideoKodea_home.webm" type="video/webm">
-    </video>
+  <video id="video-desktop" autoplay muted loop playsinline preload="auto"
+    class="video-desktop" style="opacity: 0; transition: opacity 1s ease;">
+    <source type="video/mp4">
+    <source type="video/webm">
+  </video>
 
-    <video id="video-mobile" autoplay muted loop playsinline preload="auto" class="video-mobile">
-        <source src="video/VideoKodea_vertical.mp4" type="video/mp4">
-        <source src="video/VideoKodea_vertical.webm" type="video/webm">
-    </video>
+  <video id="video-mobile" autoplay muted loop playsinline preload="auto"
+    class="video-mobile" style="opacity: 0; transition: opacity 1s ease;">
+    <source type="video/mp4">
+    <source type="video/webm">
+  </video>
 </div>
 
 
@@ -626,27 +628,71 @@
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JS/carousel_testimonials.js"></script>
+<video id="video-desktop" autoplay muted loop playsinline style="display:none;">
+    <source type="video/mp4">
+</video>
+
+<video id="video-mobile" autoplay muted loop playsinline style="display:none;">
+    <source type="video/mp4">
+</video>
+
+<div class="video-fallback">
+    <img src="img/fallback.jpg" alt="Fallback">
+</div>
+
 <script>
-const fallback = document.querySelector(".video-fallback");
-const desktopVideo = document.getElementById("video-desktop");
-const mobileVideo = document.getElementById("video-mobile");
+document.addEventListener("DOMContentLoaded", function () {
+  const fallback = document.querySelector(".video-fallback");
+  const desktopVideo = document.getElementById("video-desktop");
+  const mobileVideo = document.getElementById("video-mobile");
+  const isMobile = window.innerWidth <= 768;
 
-// Detectar si es móvil
-const isMobile = window.innerWidth <= 768;
-const activeVideo = isMobile ? mobileVideo : desktopVideo;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const isSlowConnection = connection && (
+    connection.saveData ||
+    connection.effectiveType === "2g" ||
+    connection.effectiveType === "slow-2g"
+  );
 
-activeVideo.addEventListener("canplaythrough", () => {
-    // mostrar el video con efecto
-    activeVideo.classList.add("active");
-    // desvanecer la imagen
+  if (isSlowConnection) {
+    console.warn("Conexión lenta o ahorro de datos activado: no se carga el video.");
+    return;
+  }
+
+  let activeVideo;
+
+  if (isMobile) {
+    const sources = mobileVideo.querySelectorAll("source");
+    sources[0].src = "video/VideoKodea_vertical.mp4";
+    sources[1].src = "video/VideoKodea_vertical.webm";
+    mobileVideo.style.display = "block";
+    activeVideo = mobileVideo;
+  } else {
+    const sources = desktopVideo.querySelectorAll("source");
+    sources[0].src = "video/VideoKodea_home.mp4";
+    sources[1].src = "video/VideoKodea_home.webm";
+    desktopVideo.style.display = "block";
+    activeVideo = desktopVideo;
+  }
+
+  // Forzar carga después de definir los src
+  activeVideo.load();
+
+  // Mostrar el video progresivamente cuando empiece a reproducirse
+  activeVideo.addEventListener("loadeddata", () => {
+    console.log("🎥 Video cargado:", activeVideo.currentSrc);
+    activeVideo.style.opacity = "1";
+    fallback.style.transition = "opacity 1.5s ease";
     fallback.style.opacity = "0";
+    setTimeout(() => fallback.style.display = "none", 1500);
+  });
 
-    // luego de la transición, ocultar la imagen
-    setTimeout(() => {
-        fallback.style.display = "none";
-    }, 1500);
+  activeVideo.addEventListener("error", (e) => {
+    console.error("❌ Error cargando video:", e);
+  });
 });
 </script>
+
 
 
 </body>
