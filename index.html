@@ -628,17 +628,7 @@
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JS/carousel_testimonials.js"></script>
-<video id="video-desktop" autoplay muted loop playsinline style="display:none;">
-    <source type="video/mp4">
-</video>
 
-<video id="video-mobile" autoplay muted loop playsinline style="display:none;">
-    <source type="video/mp4">
-</video>
-
-<div class="video-fallback">
-    <img src="img/fallback.jpg" alt="Fallback">
-</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -675,10 +665,10 @@ document.addEventListener("DOMContentLoaded", function () {
     activeVideo = desktopVideo;
   }
 
-  // Forzar carga después de definir los src
+
   activeVideo.load();
 
-  // Mostrar el video progresivamente cuando empiece a reproducirse
+
   activeVideo.addEventListener("loadeddata", () => {
     console.log("🎥 Video cargado:", activeVideo.currentSrc);
     activeVideo.style.opacity = "1";
