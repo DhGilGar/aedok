@@ -1302,6 +1302,36 @@ body.our-team-page footer {
   height: auto; 
 }
 
+.resellers-buttons2 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+
+}
+
+.reseller-btn2 {
+  padding: 20px 20px;
+  background-color:  white;
+  border: solid 2px #009DE0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  width:180px;
+}
+
+.reseller-btn2:hover {
+  background-color:  #004E9D;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.resellers-buttons2 img {
+  width: 120px; 
+  height: auto; 
+}
 
 
 .section-title {
